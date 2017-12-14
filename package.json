@@ -1,0 +1,24 @@
+{
+  "name": "search-master",
+  "version": "1.0.0",
+  "description": "search-master",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "angular": "^1.6.0",
+    "angular-animate": "^1.6.0",
+    "angular-route": "^1.6.0",
+    "angular-sanitize": "^1.6.0",
+    "angular-ui-bootstrap": "^2.3.1",
+    "body-parser": "*",
+    "express": "*",
+    "feed-read": "0.0.1",
+    "mongoose": "*",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1"
+  },
+  "author": "Alpesh",
+  "license": "iGroup"
+}
