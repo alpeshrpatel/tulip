@@ -14,6 +14,7 @@
     "angular-ui-bootstrap": "^2.3.1",
     "bluebird": "^3.5.1",
     "body-parser": "*",
+    "config": "^1.28.1",
     "cors": "^2.8.4",
     "express": "*",
     "express-device": "^0.4.2",
