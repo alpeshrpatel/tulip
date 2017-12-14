@@ -1,15 +1,13 @@
-/**
- * http://usejsdoc.org/
- */
+
 var mongoose = require('mongoose');
 
-//School Schema
+//Device Schema
 var deviceSchema = mongoose.Schema({
 	
 	name:{
 		type: String
 	},
-	http_version:{
+	httpversion:{
 		type: String
 	},
 	//---Device type tablet, mobile, desktop-------
@@ -21,3 +19,42 @@ var deviceSchema = mongoose.Schema({
 		default: Date.now
 	}
 });
+
+var Device = module.exports = mongoose.model('Device', deviceSchema);
+
+//Get Devices
+module.exports.getDevices = function(callback, limit){
+	Device.find(callback).limit(limit);
+}
+
+//Get Device
+module.exports.getDeviceById = function(id, callback){
+	Device.findById(id, callback);
+}
+
+module.exports.getDevicesByName = function(name , callback, limit){
+	Device.find({'name' : new RegExp(name,'i')},callback).limit(limit);
+}
+
+
+//Add Device
+module.exports.addDevice = function(device, callback){
+	Device.create(device, callback);
+}
+
+//Update Device
+module.exports.updateDevice = function(id, device, options, callback){
+	var query = {_id: id};
+	var update = {
+			name: device.name,
+			http_version: device.http_version,
+			type : device.type
+	}
+	Device.findOneAndUpdate(query, update, options, callback);
+}
+
+//Delete Device
+module.exports.removeDevice = function(id, callback){
+	var query = {_id: id};
+	Device.remove(query, callback);
+}

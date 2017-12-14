@@ -1,11 +1,13 @@
 var mongoose = require('mongoose');
-
-//School Schema
+//schoolModel Schema
 var schoolSchema = mongoose.Schema({
 	
 	name:{
 		type: String,
 		required: true
+	},
+	details:{
+		type: String
 	},
 	address:{
 		type: String
@@ -24,19 +26,57 @@ var schoolSchema = mongoose.Schema({
 	country:{
 		type: String
 	},
-	students:{
-		type: String
+	boys:{
+		type: Number
 	},
-	teachers:{
-		type: String
+	girls:{
+		type: Number
+	},
+	maleteacher:{
+		type: Number //--Number of teacher
+	},
+	femaleteacher:{
+		type: Number //--Number of teacher
+	},
+	type :{
+		type: String //--Public / Private/ International
+	},
+	daycare :{
+		type: Boolean
+	}, 
+	kg :{
+		type: Boolean
+	},
+	primary :{
+		type: Boolean
+	},
+	
+	secondory :{
+		type: Boolean
+	},
+	
+	high :{
+		type: Boolean
 	},
 	website:{
 		type: String
+	},
+	starttime:{
+		type: Number
+	},
+	endtime:{
+		type: Number
 	},
 	email:{
 		type: [String]
 	},
 	phone:{
+		type: [String]
+	},
+	fax:{
+		type: [String]
+	},
+	schoolimages:{
 		type: [String]
 	},
 	create_date:{
@@ -48,13 +88,17 @@ var schoolSchema = mongoose.Schema({
 	}
 });
 
+
 var School = module.exports = mongoose.model('School', schoolSchema);
 
 // Get Schools
+module.exports.getSchools = function(callback, limit){
+	School.find(callback).limit(limit);
+}
 
-
-module.exports.getSchools = function(name , callback, limit){
-	School.find({},callback).limit(limit);
+// Get School
+module.exports.getSchoolById = function(id, callback){
+	School.findById(id, callback);
 }
 
 module.exports.getSchoolsByName = function(name , callback, limit){
@@ -70,15 +114,6 @@ module.exports.getSchoolsByCity = function(city , callback, limit){
 	School.find({'city' : city },callback).limit(limit);
 }
 
-//// Get School
-//module.exports.getSchoolById = function(id, callback){
-//	School.findById(id, callback);
-//}
-
-//Get School
-module.exports.getSchoolByName = function(name, callback){
-	School.find({name : name}, callback);
-}
 
 // Add School
 module.exports.addSchool = function(school, callback){

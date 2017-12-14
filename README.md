@@ -17,6 +17,10 @@ Social to share Button :
 
 http://plnkr.co/edit/TQoIJ2?p=preview
 
+NOTE  :#Always user header : Content-Type : application/json for all request form postman.
+
+Payload
+
 School
 ```json
 {
@@ -26,11 +30,23 @@ School
     "city":"city",
     "state":"state",
     "country":"country",
+    "boys": "100",
+    "girls" : "200",
+    "maleteacher":"10",
+    "femaleteacher":"10",
+    "type":"Public/Private/International",
+    "daycare":"true",
+    "kindergarden":"true",
+    "primary":"true",
+    "secondory" :"true",
+    "high":"true",
+    "starttime":"6 AM",
+    "endtime":"6 PM",
     "website": "abc.com",
     "email": ["email1", "email2"],
     "phone": ["phone1", "phone2"],
     "likes": "TOTAL_LIKES", 
-    "follows":[{"follower":"follower1"},{"follower":"follower2"}],
+    "follows":[{"name":"username1"},{"name":"username2"}],
     "socialmedia":[{"facebook":"facebook_page"},{"pinterest":"pinterest_images"}],
     "reviews": [
         { 
@@ -105,39 +121,17 @@ User :
 School :
 ```json
 {
-    "__v": 0,
-    "name": "DPS",
-    "address": "Makarpura Road",
-    "city": "Vadodara",
-    "zipcode": "391440",
-    "state": "Gujarat",
-    "country": "India",
-    "boys": 500,
-    "girl": 400,
-    "maleteacher": 10,
-    "femaleteacher": 10,
-    "type": "public",
-    "daycare": true,
-    "kg": true,
-    "primary": true,
-    "high": true,
-    "website": "www.rajmahel.com",
-    "starttime": 7,
-    "endtime": 5,
-    "_id": "59cff7fae972291ac02797f2",
-    "create_date": "2017-09-30T20:00:58.454Z",
-    "schoolimages": [
-        "schoolimages-1506801658446.jpg",
-        "schoolimages-1506801658447.jpg"
-    ],
-    "phone": [
-        "22294",
-        "24258"
-    ],
-    "email": [
-        "school@msu.com"
-    ],
-    "established" : "1895"
+    "id":"58434da482139207a2bfbbab",
+    "name" : "Padra High Schhol",
+    "address" : "Statiion road",
+    "city" : "Padra",
+    "state" : "GJ",
+    "students" : "60-131-9227",
+    "teachers" : "92-994-1933",
+    "email" : "jhernandez0@mapquest.com",
+    "website" : "jhernandez0@miibeian.gov.cn",
+    "phone" : "27-973-8142",
+    "medium" : ["GSEB","CBSE","ICSE"]
 }
 ```
 

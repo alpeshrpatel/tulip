@@ -1,4 +1,6 @@
 var express = require('express');
+var multer  = require('multer')
+var upload = multer({ dest: 'public/uploads/' })
 
 var School= require('../../models/school')
 
@@ -35,15 +37,27 @@ router.get('/api/schools/:search', function(req, res){
 //	});
 //});
 
-router.post('/api/schools', function(req, res){
-	var book = req.body;
-	School.addSchool(book, function(err, school){
-		if(err){
-			throw err;
-		}
-		res.json(school);
-	});
+//router.post('/api/schools', upload.any(),function(req, res){
+//	console.log("HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM")
+//	var book = req.body;
+//	School.addSchool(book, function(err, school){
+//		if(err){
+//			throw err;
+//		}
+//		res.json(school);
+//	});
+//});
+
+
+router.post('/api/schools', upload.any(),function(req, res){
+	console.log("HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM")
+	
+	res.send(
+			req.files
+	);
 });
+
+
 
 router.put('/api/schools/:_id', function(req, res){
 	var id = req.params._id;
