@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-//User Schema
+//Contact Schema
 var userSchema = mongoose.Schema({
 	
 	firstname:{
