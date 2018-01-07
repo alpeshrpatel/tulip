@@ -76,60 +76,6 @@ User
      }
 ```
 
-User : 
-```json
-{
-        "user_id" : "ABCDBWN",
-        "password" : "ABCDBWN",
-        "date_of_join" : "15/10/2010",
-        "education" : "B.C.A.",
-        "profession" : "DEVELOPER",
-        "interest" : "MUSIC",
-        "community_name" : [
-                "MODERN MUSIC",
-                "CLASSICAL MUSIC",
-                "WESTERN MUSIC"
-        ],
-        "community_moder_id" : [
-                "MR. BBB",
-                "MR. JJJ",
-                "MR MMM"
-        ],
-        "community_members" : [
-                500,
-                200,
-                1500
-        ],
-        "friends_id" : [
-                "MMM123",
-                "NNN123",
-                "OOO123"
-        ],
-        "ban_friends_id" : [
-                "BAN123",
-                "BAN456",
-                "BAN789"
-        ]
-}
-
-```
-
-School :
-```json
-{
-    "id":"58434da482139207a2bfbbab",
-    "name" : "Padra High Schhol",
-    "address" : "Statiion road",
-    "city" : "Padra",
-    "state" : "GJ",
-    "students" : "60-131-9227",
-    "teachers" : "92-994-1933",
-    "email" : "jhernandez0@mapquest.com",
-    "website" : "jhernandez0@miibeian.gov.cn",
-    "phone" : "27-973-8142",
-    "medium" : ["GSEB","CBSE","ICSE"]
-}
-```
 
 Review :
 ```json
